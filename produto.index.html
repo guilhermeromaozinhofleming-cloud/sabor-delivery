@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sabor & Cia Delivery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    /* Barra Superior Simulando o Navegador */
+    .browser-bar {
+      background-color: #eaf0f6;
+      padding: 10px;
+      border-bottom: 1px solid #d0d7de;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .browser-url {
+      background-color: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 20px;
+      padding: 6px 20px;
+      width: 60%;
+      max-width: 500px;
+      text-align: center;
+      font-family: monospace;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Estilos Gerais */
+    nav a {
+      color: #d92525;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #1a2b4c;
+      padding: 12px;
+    }
+
+    td {
+      padding: 12px;
+      vertical-align: middle;
+      border-top: 1px solid #ddd;
+    }
+
+    mark {
+      background-color: #fef3c7;
+      color: #92400e;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra Superior do Navegador -->
+  <div class="browser-bar">
+    <div class="browser-url">
+      http://localhost/delivery/produtos.html
+    </div>
+  </div>
+
+  <!-- Texto de aviso no topo -->
+  <p style="text-align: center; font-weight: bold;">
+    🛵 Entregamos em toda a cidade em até 45 minutos! Escolha seus itens abaixo.
+  </p>
+
+  <hr>
+
+  <!-- Cabeçalho Principal -->
+  <header style="text-align: center;">
+    <h1 style="color: #d92525; margin-bottom: 5px;">
+      🍔 Sabor & Cia Delivery
+    </h1>
+    
+    <p style="font-style: italic; margin-top: 0; color: #333;">
+      Cardápio Completo de Produtos
+    </p>
+
+    <nav style="font-size: 18px;">
+      <a href="#">Início</a> 
+      <span style="color: #666;">|</span> 
+      <a href="#" style="font-weight: bold;">Cardápio de Produtos</a> 
+      <span style="color: #666;">|</span> 
+      <a href="#">Finalizar Pedido</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <!-- Âncoras Intra-página -->
+  <p style="text-align: center; font-size: 18px;">
+    <strong>Ir direto para:</strong>
+    <a href="#hamburgueres">🍔 Hambúrgueres</a> 
+    <span style="color: #666;">|</span>
+    <a href="#pizzas">🍕 Pizzas</a> 
+    <span style="color: #666;">|</span>
+    <a href="#porcoes">🍟 Porções</a> 
+    <span style="color: #666;">|</span>
+    <a href="#bebidas">🥤 Bebidas & Sobremesas</a>
+  </p>
+
+  <br>
+
+  <!-- Campo de Busca -->
+  <div style="text-align: center;">
+    <label for="busca-cardapio" style="font-weight: bold; font-size: 18px; margin-right: 8px;">
+      🔍 Buscar no Cardápio:
+    </label>
+
+    <input 
+      type="search" 
+      id="busca-cardapio" 
+      list="opcoes-cardapio" 
+      placeholder="Ex: Bacon, Calabresa, Batata..."
+      style="padding: 8px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; width: 280px;"
+    >
+
+    <datalist id="opcoes-cardapio">
+      <option value="Bacon">
+      <option value="Calabresa">
+      <option value="Batata">
+    </datalist>
+
+    <button 
+      type="submit" 
+      style="background-color: #d92525; color: white; border: none; padding: 9px 16px; font-size: 16px; border-radius: 4px; cursor: pointer; margin-left: 6px;"
+    >
+      Buscar
+    </button>
+  </div>
+
+  <hr style="margin-top: 20px; border: 0; border-top: 1px solid #ccc;">
+
+  <!-- Seção Hambúrgueres -->
+  <section id="hamburgueres">
+    <h2>🍔 Hambúrgueres Artesanais</h2>
+    <p>Carne 100% bovina grelhada na brasa, servida no pão brioche selado na manteiga.</p>
+
+    <!-- Tabela Única de Produtos -->
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center; width: 20%;">Foto</th>
+          <th style="width: 40%;">Nome &amp; Ingredientes</th>
+          <th style="text-align: center; width: 20%;">Preço</th>
+          <th style="text-align: center; width: 20%;">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <!-- Item 1: Burger Clássico -->
+        <tr>
+          <td style="text-align: center;">
+            <img src="assets-f/burger-classico.jpg" alt="Burger Clássico" width="120">
+          </td>
+          <td>
+            <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Burger Clássico</h3>
+            <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+              Hambúrguer bovino 160g, queijo prato derretido, alface fresca, tomate maduro e maionese verde da casa no pão brioche.
+            </p>
+            <mark>TRADICIONAL</mark>
+          </td>
+          <td style="text-align: center; font-weight: bold; color: #1a2b4c;">
+            R$ 29,90
+          </td>
+          <td style="text-align: center;">
+            <a href="#" style="font-weight: bold;">Pedir este Item</a>
+          </td>
+        </tr>
+
+        <!-- Item 2: Burger Bacon Supreme -->
+        <tr>
+          <td style="text-align: center;">
+            <img src="assets-f/burger-bacon.jpg" alt="Burger Bacon Supreme" width="120">
+          </td>
+          <td>
+            <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Burger Bacon Supreme</h3>
+            <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+              Blend 180g na brasa, fatias generosas de bacon artesanal crocante, queijo cheddar inglês e molho barbecue defumado.
+            </p>
+            <mark>MAIS VENDIDO</mark>
+          </td>
+          <td style="text-align: center; font-weight: bold; color: #1a2b4c;">
+            R$ 36,90
+          </td>
+          <td style="text-align: center;">
+            <a href="#" style="font-weight: bold;">Pedir este Item</a>
+          </td>
+        </tr>
+
+        <!-- Item 3: Smash Burger Duplo Cheddar -->
+        <tr>
+          <td style="text-align: center;">
+            <img src="assets-f/smash-burger.jpg" alt="Smash Burger Duplo Cheddar" width="120">
+          </td>
+          <td>
+            <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Smash Burger Duplo Cheddar</h3>
+            <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+              2 carnes smash de 90g prensadas com crostinha dourada, queijo cheddar derretido, picles e molho especial.
+            </p>
+            <mark>CROCANTE</mark>
+          </td>
+          <td style="text-align: center; font-weight: bold; color: #1a2b4c;">
+            R$ 28,90
+          </td>
+          <td style="text-align: center;">
+            <a href="#" style="font-weight: bold;">Pedir este Item</a>
+          </td>
+        </tr>
+
+        <!-- Item 4: Burger Vegano Futuro -->
+        <tr>
+          <td style="text-align: center;">
+            <img src="assets-f/burger-vegano.jpg" alt="Burger Vegano Futuro" width="120">
+          </td>
+          <td>
+            <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Burger Vegano Futuro</h3>
+            <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+              Hambúrguer 100% vegetal à base de grão-de-bico e cogumelos frescos, queijo vegano, rúcula e maionese de ervas sem ovos.
+            </p>
+            <mark>VEGANO</mark>
+          </td>
+          <td style="text-align: center; font-weight: bold; color: #1a2b4c;">
+            R$ 32,00
+          </td>
+          <td style="text-align: center;">
+            <a href="#" style="font-weight: bold;">Pedir este Item</a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Link Voltar ao Topo -->
+  <div style="text-align: right; margin-top: 15px;">
+    <a href="#" style="font-weight: bold; font-size: 14px;">
+      ▲ Voltar ao topo
+    </a>
+  </div>
+
+</body>
+</html>
+
+<!-- Seção Pizzas -->
+<section id="pizzas" style="font-family: sans-serif;">
+  <h2>🍕 Pizzas Especiais (8 Fatias / 35cm)</h2>
+  <p>Massa italiana de fermentação natural de 48 horas, assada em alta temperatura.</p>
+</section>
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Ingredientes</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item 1: Pizza Calabresa Especial -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-calabresa.jpg" alt="Pizza Calabresa Especial" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Calabresa Especial</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Molho pelati caseiro, mussarela, linguiça calabresa fatiada artesanal, cebola roxa e azeitonas pretas.
+        </p>
+        <mark style="background-color: #fef3c7; color: #92400e; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 4px;">
+          TRADICIONAL
+        </mark>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 45,00
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+
+    <!-- Item 2: Pizza Quatro Queijos Nobres -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-quatro-queijos.jpg" alt="Pizza Quatro Queijos Nobres" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Quatro Queijos Nobres</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Generosas camadas de queijo mussarela, provolone curado, catupiry cremoso e queijo gorgonzola especial.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 49,90
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Ingredientes</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item 1: Pizza Calabresa Especial -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-calabresa.jpg" alt="Pizza Calabresa Especial" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Calabresa Especial</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Molho pelati caseiro, mussarela, linguiça calabresa fatiada artesanal, cebola roxa e azeitonas pretas.
+        </p>
+        <mark style="background-color: #fef3c7; color: #92400e; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 4px;">
+          TRADICIONAL
+        </mark>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 45,00
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+
+    <!-- Item 2: Pizza Quatro Queijos Nobres -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-quatro-queijos.jpg" alt="Pizza Quatro Queijos Nobres" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Quatro Queijos Nobres</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Generosas camadas de queijo mussarela, provolone curado, catupiry cremoso e queijo gorgonzola especial.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 49,90
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align: right; margin-top: 15px;">
+    <a href="#" style="font-weight: bold; font-size: 14px;">
+      ▲ Voltar ao topo
+    </a>
+  </div>
+
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Ingredientes</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item 1: Pizza Margherita Clássica -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-margherita.jpg" alt="Pizza Margherita Clássica" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Margherita Clássica</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Molho de tomate fresco, mussarela de búfala derretida, rodelas de tomate e folhas de manjericão fresco da horta.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 42,00
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+
+    <!-- Item 2: Pizza Doce Choco-Morango -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/pizza-chocolate.jpg" alt="Pizza Doce Choco-Morango" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Pizza Doce Choco-Morango</h3>
+        <p style="margin: 0 0 12px 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Massa fina crocante com ganache de chocolate ao leite, fatias de morangos frescos e raspas de chocolate branco.
+        </p>
+        <mark style="background-color: #fef3c7; color: #92400e; padding: 2px 6px; font-size: 12px; font-weight: bold; border-radius: 4px;">
+          SOBREMESA
+        </mark>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 38,00
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Link Voltar ao Topo -->
+<div style="text-align: right; margin-top: 10px; font-family: sans-serif;">
+  <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none; font-size: 14px;">
+    ▲ Voltar ao topo
+  </a>
+</div>
+
+<!-- Seção Porções & Acompanhamentos -->
+<section id="porcoes" style="font-family: sans-serif;">
+  <h2 style="color: #1a2b4c;">🍟 Porções &amp; Acompanhamentos</h2>
+  <p style="color: #555;">O acompanhamento perfeito para o seu pedido.</p>
+</section>
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Descrição</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item 1: Batata Frita Cheddar & Bacon -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/batata-frita.jpg" alt="Batata Frita Cheddar &amp; Bacon" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Batata Frita Cheddar &amp; Bacon (400g)</h3>
+        <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Batatas crocantes e sequinhas cobertas com queijo cheddar cremoso e pedacinhos de bacon frito.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 24,90
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+
+    <!-- Item 2: Anéis de Cebola -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/aneis-cebola.jpg" alt="Anéis de Cebola" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Onion Rings / Anéis de Cebola (12 un)</h3>
+        <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Anéis de cebola selecionados, empanamento panko crocante e fritos na hora. Acompanha molho tártaro.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 22,00
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Descrição</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item: Nuggets Artesanais de Frango -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/nuggets.jpg" alt="Nuggets Artesanais de Frango" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Nuggets Artesanais de Frango (10 un)</h3>
+        <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Pedaços de peito de frango temperados, empanamento crocante. Acompanha potinho de molho barbecue.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 19,90
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Link Voltar ao Topo -->
+<div style="text-align: right; margin-top: 10px; font-family: sans-serif;">
+  <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none; font-size: 14px;">
+    ▲ Voltar ao topo
+  </a>
+</div>
+
+<!-- Bebidas & Sobremesas -->
+<section id="bebidas" style="font-family: sans-serif;">
+  <h2 style="color: #1a2b4c;">🥤 Bebidas &amp; Sobremesas</h2>
+  <p style="color: #555;">Bebidas geladas e sobremesas deliciosas para fechar sua refeição.</p>
+
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+    <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+      <tr>
+        <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+        <th style="padding: 12px; width: 40%;">Nome &amp; Opções</th>
+        <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+        <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Item: Refrigerante Lata -->
+      <tr>
+        <td style="padding: 12px; text-align: center; vertical-align: middle;">
+          <img src="assets-f/refrigerante.jpg" alt="Refrigerante Lata" style="width: 120px; border-radius: 8px;">
+        </td>
+        <td style="padding: 12px; vertical-align: middle;">
+          <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Refrigerante Lata (350ml)</h3>
+          <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+            Opções: Coca-Cola original, Coca Zero, Guaraná Antarctica ou Fanta Laranja.
+          </p>
+        </td>
+        <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+          R$ 6,00
+        </td>
+        <td style="padding: 12px; text-align: center; vertical-align: middle;">
+          <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; border-color: #ddd; font-family: sans-serif;">
+  <thead style="background-color: #f2f2f2; color: #1a2b4c;">
+    <tr>
+      <th style="padding: 12px; text-align: center; width: 20%;">Foto</th>
+      <th style="padding: 12px; width: 40%;">Nome &amp; Opções</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Preço</th>
+      <th style="padding: 12px; text-align: center; width: 20%;">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Item 1: Milk-shake Cremoso Especial -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/milkshake.jpg" alt="Milk-shake Cremoso Especial" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Milk-shake Cremoso Especial (400ml)</h3>
+        <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Feito com sorvete artesanal de chocolate batido e finalizado com chantilly.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 16,50
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+
+    <!-- Item 2: Petit Gâteau com Sorvete de Baunilha -->
+    <tr>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <img src="assets-f/petit-gateau.jpg" alt="Petit Gâteau com Sorvete de Baunilha" style="width: 120px; border-radius: 8px;">
+      </td>
+      <td style="padding: 12px; vertical-align: middle;">
+        <h3 style="margin: 0 0 8px 0; color: #1a2b4c;">Petit Gâteau com Sorvete de Baunilha</h3>
+        <p style="margin: 0; color: #555; font-size: 14px; line-height: 1.4;">
+          Bolo quente de chocolate meio amargo com calda escorrendo e bola de sorvete de baunilha.
+        </p>
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle; font-weight: bold; color: #1a2b4c;">
+        R$ 18,90
+      </td>
+      <td style="padding: 12px; text-align: center; vertical-align: middle;">
+        <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none;">Pedir este Item</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Link Voltar ao Topo -->
+<div style="text-align: right; margin-top: 10px; font-family: sans-serif;">
+  <a href="#" style="color: #d92525; font-weight: bold; text-decoration: none; font-size: 14px;">
+    ▲ Voltar ao topo
+  </a>
+</div>
+
+<hr style="margin-top: 20px; border: 0; border-top: 1px solid #ccc;">
+
+<!-- Rodapé -->
+<footer style="text-align: center; font-family: sans-serif; padding: 15px 0;">
+  <h3 style="margin: 0 0 10px 0; color: #1a2b4c;">
+    🍔 Sabor &amp; Cia Delivery
+  </h3>
+  
+  <p style="margin: 0 0 8px 0; font-size: 14px;">
+    <a href="#" style="color: #d92525; text-decoration: none;">Início</a> 
+    <span style="color: #666;">|</span> 
+    <a href="#" style="color: #d92525; text-decoration: none;">Produtos</a> 
+    <span style="color: #666;">|</span> 
+    <a href="#" style="color: #d92525; text-decoration: none;">Finalizar Pedido</a>
+  </p>
+
+  <p style="margin: 0; color: #666; font-size: 12px;">
+    Sabor &amp; Cia Delivery © 2026 - Projeto didático para aula de HTML (4 Horas).
+  </p>
+</footer>
